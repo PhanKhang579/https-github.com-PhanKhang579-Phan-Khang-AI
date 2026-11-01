@@ -31,6 +31,8 @@ Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Set
 
 - **Cong no phai tra theo tuoi no** (Accounts → Report): công nợ phải trả theo nhà cung cấp, chia nhóm Chưa đến hạn / 1-30 / 31-60 / 61-90 / trên 90 ngày; tính theo ngày đến hạn hoặc ngày hóa đơn; xem chi tiết từng hóa đơn mua. Lấy từ Purchase Invoice còn dư nợ (chưa gồm thanh toán chưa phân bổ và Journal — đối chiếu với báo cáo "Accounts Payable" chuẩn).
 
+- **Gia thanh san xuat** (Manufacturing → Report): giá thành thực tế theo thành phẩm (hoặc từng lệnh sản xuất) từ các Stock Entry loại Manufacture: chi phí NVL + chi phí khác, giá thành đơn vị, so với giá thành theo BOM (chênh lệch %). Lọc kỳ, thành phẩm.
+
 ## Bước tiếp theo
 - Nút "Tạo BOM" đã có: công thức Approved + có sản phẩm → BOM (qty = tỷ lệ% × khối lượng mẻ)
 - Mẫu in tiếng Việt đã có: Báo giá, Hóa đơn bán hàng, Phiếu sản xuất, Công thức mỹ phẩm, Phiếu nhập kho (Purchase Receipt), Phiếu xuất kho (Delivery Note), Phiếu kho (Stock Entry), Phiếu thu/chi (Payment Entry), Đơn đặt hàng bán (Sales Order), Đơn mua hàng (Purchase Order) — chọn trong Print, tên "... VN"
