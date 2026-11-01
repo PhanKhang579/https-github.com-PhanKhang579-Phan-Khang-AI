@@ -20,5 +20,5 @@ Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Set
 
 ## Bước tiếp theo
 - Nút "Tạo BOM" đã có: công thức Approved + có sản phẩm → BOM (qty = tỷ lệ% × khối lượng mẻ)
-- Mẫu in tiếng Việt đã có: Báo giá, Hóa đơn bán hàng, Phiếu sản xuất, Công thức mỹ phẩm, Phiếu nhập kho (Purchase Receipt), Phiếu xuất kho (Delivery Note), Phiếu kho (Stock Entry: nhập/xuất/chuyển/sản xuất) — chọn trong Print, tên "... VN"
+- Mẫu in tiếng Việt đã có: Báo giá, Hóa đơn bán hàng, Phiếu sản xuất, Công thức mỹ phẩm, Phiếu nhập kho (Purchase Receipt), Phiếu xuất kho (Delivery Note), Phiếu kho (Stock Entry), Phiếu thu/chi (Payment Entry) — chọn trong Print, tên "... VN"
 - Hóa đơn điện tử theo chuẩn VN (kết nối nhà cung cấp HĐĐT)
