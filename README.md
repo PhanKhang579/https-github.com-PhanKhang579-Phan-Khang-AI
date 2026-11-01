@@ -19,5 +19,5 @@ App `omigos_erp` thêm DocType **Cosmetic Formula** (công thức theo % + pha A
 Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Setup Wizard, bật các module trên.
 
 ## Bước tiếp theo
-- Nút "Tạo BOM" từ Cosmetic Formula
+- Nút "Tạo BOM" đã có: công thức Approved + có sản phẩm → BOM (qty = tỷ lệ% × khối lượng mẻ)
 - Print format báo giá/phiếu sản xuất tiếng Việt, hóa đơn theo chuẩn VN

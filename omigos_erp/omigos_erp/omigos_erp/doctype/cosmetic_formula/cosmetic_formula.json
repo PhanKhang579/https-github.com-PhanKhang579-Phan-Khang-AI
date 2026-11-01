@@ -4,21 +4,108 @@
  "module": "Omigos ERP",
  "autoname": "field:formula_name",
  "engine": "InnoDB",
- "field_order": ["formula_name", "product", "status", "column_break_1", "customer", "version", "total_percentage", "section_items", "items"],
+ "field_order": [
+  "formula_name",
+  "product",
+  "status",
+  "column_break_1",
+  "customer",
+  "version",
+  "batch_size",
+  "total_percentage",
+  "bom",
+  "section_items",
+  "items"
+ ],
  "fields": [
-  {"fieldname": "formula_name", "fieldtype": "Data", "label": "Ten cong thuc", "reqd": 1, "unique": 1},
-  {"fieldname": "product", "fieldtype": "Link", "options": "Item", "label": "San pham"},
-  {"fieldname": "status", "fieldtype": "Select", "label": "Trang thai", "options": "Draft\nApproved\nObsolete", "default": "Draft"},
-  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
-  {"fieldname": "customer", "fieldtype": "Link", "options": "Customer", "label": "Khach hang (gia cong)"},
-  {"fieldname": "version", "fieldtype": "Data", "label": "Phien ban", "default": "1.0"},
-  {"fieldname": "total_percentage", "fieldtype": "Percent", "label": "Tong ty le (%)", "read_only": 1},
-  {"fieldname": "section_items", "fieldtype": "Section Break", "label": "Thanh phan"},
-  {"fieldname": "items", "fieldtype": "Table", "options": "Cosmetic Formula Item", "label": "Thanh phan", "reqd": 1}
+  {
+   "fieldname": "formula_name",
+   "fieldtype": "Data",
+   "label": "Ten cong thuc",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Link",
+   "options": "Item",
+   "label": "San pham"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Trang thai",
+   "options": "Draft\nApproved\nObsolete",
+   "default": "Draft"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "options": "Customer",
+   "label": "Khach hang (gia cong)"
+  },
+  {
+   "fieldname": "version",
+   "fieldtype": "Data",
+   "label": "Phien ban",
+   "default": "1.0"
+  },
+  {
+   "fieldname": "batch_size",
+   "fieldtype": "Float",
+   "label": "Khoi luong me (don vi ton kho cua san pham)",
+   "default": "100"
+  },
+  {
+   "fieldname": "total_percentage",
+   "fieldtype": "Percent",
+   "label": "Tong ty le (%)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bom",
+   "fieldtype": "Link",
+   "options": "BOM",
+   "label": "BOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_items",
+   "fieldtype": "Section Break",
+   "label": "Thanh phan"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "options": "Cosmetic Formula Item",
+   "label": "Thanh phan",
+   "reqd": 1
+  }
  ],
  "permissions": [
-  {"role": "Manufacturing Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
-  {"role": "Manufacturing User", "read": 1, "write": 1, "create": 1},
-  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
+  {
+   "role": "Manufacturing Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Manufacturing User",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
  ]
 }
