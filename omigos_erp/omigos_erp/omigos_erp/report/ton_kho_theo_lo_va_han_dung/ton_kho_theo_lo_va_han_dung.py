@@ -24,25 +24,37 @@ def get_columns():
 
 
 def get_data(filters):
-	conditions = ["sle.is_cancelled = 0", "sle.batch_no != ''"]
 	values = {}
-	for key, field in (("company", "sle.company"), ("item_code", "sle.item_code"), ("warehouse", "sle.warehouse")):
+	bundle_cond, legacy_cond = ["sbb.docstatus = 1", "sbb.is_cancelled = 0", "sbe.batch_no IS NOT NULL", "sbe.batch_no != ''"], [
+		"sle.is_cancelled = 0", "sle.batch_no IS NOT NULL", "sle.batch_no != ''", "IFNULL(sle.serial_and_batch_bundle, '') = ''"]
+	for key, bfield, lfield in (("company", "sbb.company", "sle.company"), ("item_code", "sbb.item_code", "sle.item_code"), ("warehouse", "sbe.warehouse", "sle.warehouse")):
 		if filters.get(key):
-			conditions.append(f"{field} = %({key})s")
+			bundle_cond.append(f"{bfield} = %({key})s")
+			legacy_cond.append(f"{lfield} = %({key})s")
 			values[key] = filters[key]
 
 	having = "" if filters.get("show_zero") else "HAVING qty > 0"
+	# ERPNext v15 ghi số lô trong Serial and Batch Bundle (sổ kho không còn batch_no);
+	# phần UNION thứ hai giữ lại dữ liệu cũ ghi trực tiếp batch_no trên Stock Ledger Entry.
 	rows = frappe.db.sql(
 		f"""
-		SELECT sle.item_code, i.item_name, i.stock_uom, sle.batch_no, sle.warehouse,
-			SUM(sle.actual_qty) AS qty, b.manufacturing_date, b.expiry_date
-		FROM `tabStock Ledger Entry` sle
-		JOIN `tabBatch` b ON b.name = sle.batch_no
-		JOIN `tabItem` i ON i.name = sle.item_code
-		WHERE {' AND '.join(conditions)}
-		GROUP BY sle.item_code, sle.batch_no, sle.warehouse
+		SELECT m.item_code, i.item_name, i.stock_uom, m.batch_no, m.warehouse,
+			SUM(m.qty) AS qty, b.manufacturing_date, b.expiry_date
+		FROM (
+			SELECT sbb.item_code, sbe.batch_no, sbe.warehouse, sbe.qty
+			FROM `tabSerial and Batch Entry` sbe
+			JOIN `tabSerial and Batch Bundle` sbb ON sbb.name = sbe.parent
+			WHERE {' AND '.join(bundle_cond)}
+			UNION ALL
+			SELECT sle.item_code, sle.batch_no, sle.warehouse, sle.actual_qty
+			FROM `tabStock Ledger Entry` sle
+			WHERE {' AND '.join(legacy_cond)}
+		) m
+		JOIN `tabBatch` b ON b.name = m.batch_no
+		JOIN `tabItem` i ON i.name = m.item_code
+		GROUP BY m.item_code, m.batch_no, m.warehouse
 		{having}
-		ORDER BY b.expiry_date IS NULL, b.expiry_date, sle.item_code
+		ORDER BY b.expiry_date IS NULL, b.expiry_date, m.item_code
 		""",
 		values,
 		as_dict=True,
