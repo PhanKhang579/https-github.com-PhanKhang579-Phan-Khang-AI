@@ -90,6 +90,7 @@ def get_prices(source):
 
 def cost_formula(f, prices):
 	batch = flt(f.batch_size)
+	f.formula = f.name  # cột "Công thức" của báo cáo tóm tắt
 	f.missing_price = 0
 	f.material_cost = 0
 	for row in f.ingredients:

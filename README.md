@@ -14,7 +14,7 @@ App `omigos_erp` thêm DocType **Cosmetic Formula** (công thức theo % + pha A
 
 ## Cài đặt
 ```bash
-./scripts/install.sh   # cần bench, Python 3.10+, Node 18, MariaDB, Redis
+DB_ROOT_PASSWORD=<mật khẩu root MariaDB> ./scripts/install.sh   # cần bench, Python 3.10-3.12, Node 18, MariaDB, Redis
 ```
 Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Setup Wizard, bật các module trên.
 
