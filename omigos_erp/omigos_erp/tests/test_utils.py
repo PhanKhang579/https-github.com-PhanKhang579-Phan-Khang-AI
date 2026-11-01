@@ -18,3 +18,10 @@ class TestVnMoneyInWords(FrappeTestCase):
 
 	def test_other_currency(self):
 		self.assertEqual(vn_money_in_words(12.4, "USD"), "Mười hai USD.")
+
+
+class TestCompanyHeader(FrappeTestCase):
+	def test_unknown_company_falls_back_to_name(self):
+		from omigos_erp.utils import company_header
+
+		self.assertEqual(company_header("Khong Ton Tai <x>"), "<b>Khong Ton Tai &lt;x&gt;</b>")

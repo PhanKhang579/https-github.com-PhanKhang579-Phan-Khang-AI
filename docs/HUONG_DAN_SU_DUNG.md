@@ -19,6 +19,14 @@ Dành cho lần đầu đưa vào dùng thật. Các bước dưới đây dựa
 4. **Kho (Warehouse)**: tạo các kho thực tế, ví dụ kho nguyên liệu, kho bao bì, kho thành phẩm, kho bán thành phẩm (WIP).
 5. **Đơn vị tính (UOM)**: kiểm tra có `Kg`, `Gram`, `Lít`, `Cái`; thêm nếu thiếu.
 
+### Thông tin công ty trên mẫu in
+
+Đầu mỗi mẫu in tự lấy từ hồ sơ công ty: logo, tên, địa chỉ, MST, điện thoại, email, website. Điền ở:
+- **Company**: Company Logo, Tax ID (mã số thuế), Phone No, Email, Website.
+- **Address**: tạo địa chỉ trụ sở, trong mục Links thêm dòng `Company` = tên công ty, đánh dấu Preferred/Primary.
+
+Trường nào để trống thì dòng đó không hiện.
+
 ## 2. Nhập dữ liệu nền
 
 Thứ tự khuyến nghị, vì cái sau cần cái trước:
@@ -63,5 +71,4 @@ Mẹo: lưu bộ lọc hay dùng bằng nút **Save** ở thanh bộ lọc, và 
 ## 6. Chưa có sẵn
 
 - Hóa đơn điện tử hợp lệ theo quy định (cần kết nối nhà cung cấp hóa đơn điện tử).
-- Mẫu in chưa có logo, địa chỉ, mã số thuế của công ty; thêm bằng Letter Head hoặc chỉnh mẫu.
 - Báo cáo thuế và sổ sách theo chuẩn Việt Nam, cần làm cùng kế toán.
