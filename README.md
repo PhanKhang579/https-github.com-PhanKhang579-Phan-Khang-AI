@@ -19,7 +19,7 @@ App `omigos_erp` thêm DocType **Cosmetic Formula** (công thức theo % + pha A
 Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Setup Wizard, bật các module trên.
 
 ## Ngôn ngữ và định dạng
-- Chọn **Vietnamese** ở Setup Wizard (hoặc System Settings → Language, và ngôn ngữ của từng người dùng) để dòng "Bằng chữ" trên các mẫu in đọc bằng tiếng Việt (ví dụ "Một Nghìn Một Trăm"); nếu để English sẽ ra tiếng Anh. Phần đuôi do ERPNext tự thêm (tiền tệ và chữ "chỉ" cho "only").
+- Dòng "Bằng chữ" trên các mẫu in dùng hàm riêng `vn_money_in_words` (omigos_erp/utils.py), luôn đọc bằng tiếng Việt, không phụ thuộc ngôn ngữ hệ thống: ví dụ 1.100.000 → "Một triệu một trăm nghìn đồng chẵn." Tiền khác VND đọc phần nguyên kèm mã tiền (vd "Mười hai USD."), chưa đọc phần lẻ.
 - Muốn số tiền hiển thị kiểu `1.100,00`: System Settings → Number Format.
 
 ## Báo cáo

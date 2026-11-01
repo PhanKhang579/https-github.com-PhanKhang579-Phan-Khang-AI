@@ -8,3 +8,6 @@ required_apps = ["erpnext"]
 
 # Cac module chuan (Selling, Stock, Manufacturing, Accounts) da co san trong ERPNext.
 # App nay chi bo sung phan dac thu my pham: Cong thuc (Cosmetic Formula).
+
+# Ham dung trong mau in: {{ vn_money_in_words(doc.grand_total, doc.currency) }}
+jinja = {"methods": ["omigos_erp.utils.vn_money_in_words"]}
