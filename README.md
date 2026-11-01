@@ -29,6 +29,8 @@ Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Set
 
 - **Lai gop theo san pham** (Accounts → Report): doanh thu, giá vốn, lãi gộp, biên lãi gộp (%) theo sản phẩm, sắp theo lãi gộp; lọc kỳ, sản phẩm, nhóm, khách hàng. Giá vốn lấy từ giá vốn lúc xuất (incoming_rate) của dòng hóa đơn; nếu bằng 0 (xuất kho qua Delivery Note) thì dùng giá vốn hiện hành của mặt hàng và đánh dấu "Giá vốn ước tính". Hàng dịch vụ không tính giá vốn.
 
+- **Cong no phai tra theo tuoi no** (Accounts → Report): công nợ phải trả theo nhà cung cấp, chia nhóm Chưa đến hạn / 1-30 / 31-60 / 61-90 / trên 90 ngày; tính theo ngày đến hạn hoặc ngày hóa đơn; xem chi tiết từng hóa đơn mua. Lấy từ Purchase Invoice còn dư nợ (chưa gồm thanh toán chưa phân bổ và Journal — đối chiếu với báo cáo "Accounts Payable" chuẩn).
+
 ## Bước tiếp theo
 - Nút "Tạo BOM" đã có: công thức Approved + có sản phẩm → BOM (qty = tỷ lệ% × khối lượng mẻ)
 - Mẫu in tiếng Việt đã có: Báo giá, Hóa đơn bán hàng, Phiếu sản xuất, Công thức mỹ phẩm, Phiếu nhập kho (Purchase Receipt), Phiếu xuất kho (Delivery Note), Phiếu kho (Stock Entry), Phiếu thu/chi (Payment Entry), Đơn đặt hàng bán (Sales Order), Đơn mua hàng (Purchase Order) — chọn trong Print, tên "... VN"

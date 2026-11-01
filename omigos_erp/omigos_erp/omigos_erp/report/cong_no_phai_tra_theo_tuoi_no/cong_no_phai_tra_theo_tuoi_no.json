@@ -1,0 +1,16 @@
+{
+ "doctype": "Report",
+ "name": "Cong no phai tra theo tuoi no",
+ "report_name": "Cong no phai tra theo tuoi no",
+ "ref_doctype": "Purchase Invoice",
+ "report_type": "Script Report",
+ "is_standard": "Yes",
+ "module": "Omigos ERP",
+ "disabled": 0,
+ "roles": [
+  {"role": "Accounts Manager"},
+  {"role": "Accounts User"},
+  {"role": "Purchase Manager"},
+  {"role": "System Manager"}
+ ]
+}
