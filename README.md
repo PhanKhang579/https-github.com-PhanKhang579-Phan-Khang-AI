@@ -23,6 +23,8 @@ Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Set
 
 - **Doanh thu theo khach hang** (Accounts → Report): doanh thu, thuế, còn phải thu, tỷ trọng theo khách hàng; lọc kỳ, khách hàng, nhóm; có biểu đồ top 10; hóa đơn trả hàng tự trừ.
 
+- **Doanh thu theo san pham** (Accounts → Report): số lượng, giá bán TB, doanh thu, số khách mua, tỷ trọng theo sản phẩm; lọc kỳ, sản phẩm, nhóm, khách hàng; biểu đồ top 10.
+
 ## Bước tiếp theo
 - Nút "Tạo BOM" đã có: công thức Approved + có sản phẩm → BOM (qty = tỷ lệ% × khối lượng mẻ)
 - Mẫu in tiếng Việt đã có: Báo giá, Hóa đơn bán hàng, Phiếu sản xuất, Công thức mỹ phẩm, Phiếu nhập kho (Purchase Receipt), Phiếu xuất kho (Delivery Note), Phiếu kho (Stock Entry), Phiếu thu/chi (Payment Entry), Đơn đặt hàng bán (Sales Order), Đơn mua hàng (Purchase Order) — chọn trong Print, tên "... VN"
