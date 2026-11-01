@@ -18,6 +18,21 @@ DB_ROOT_PASSWORD=<mật khẩu root MariaDB> ./scripts/install.sh   # cần benc
 ```
 Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Setup Wizard, bật các module trên.
 
+## Chạy bằng Docker (khuyên dùng để dùng thật)
+```bash
+cd docker
+cp .env.example .env        # đổi DB_ROOT_PASSWORD, ADMIN_PASSWORD, SITE_NAME
+docker compose up -d --build
+docker compose logs -f create-site   # chờ tạo site xong (vài phút lần đầu)
+```
+Mở `http://localhost:8080` (hoặc `HTTP_PORT` bạn đặt), đăng nhập `Administrator` / `ADMIN_PASSWORD`, chạy Setup Wizard và chọn Vietnamese.
+
+- Gồm: MariaDB 10.6, 2 Redis, ERPNext v15 + `omigos_erp`, worker nền (bắt buộc để tính lại giá trị tồn kho), scheduler, websocket, nginx.
+- Dữ liệu nằm trong volume Docker `db-data` và `sites`. Sao lưu: `./docker/backup.sh`.
+- Cập nhật code: `git pull`, rồi `docker compose up -d --build` (service `create-site` tự chạy `migrate`).
+- Đặt sau tên miền thật: đặt `SITE_NAME` bằng tên miền và để reverse proxy (Caddy/nginx) cấp HTTPS trỏ vào cổng `HTTP_PORT`.
+- Chưa build/chạy thử được trong môi trường tạo ra gói này (không có Docker daemon); file compose đã qua `docker compose config`.
+
 ## Ngôn ngữ và định dạng
 - Dòng "Bằng chữ" trên các mẫu in dùng hàm riêng `vn_money_in_words` (omigos_erp/utils.py), luôn đọc bằng tiếng Việt, không phụ thuộc ngôn ngữ hệ thống: ví dụ 1.100.000 → "Một triệu một trăm nghìn đồng chẵn." Tiền khác VND đọc phần nguyên kèm mã tiền (vd "Mười hai USD."), chưa đọc phần lẻ.
 - Muốn số tiền hiển thị kiểu `1.100,00`: System Settings → Number Format.
