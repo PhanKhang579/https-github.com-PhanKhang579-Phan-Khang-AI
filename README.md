@@ -43,3 +43,10 @@ Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Set
 - Nút "Tạo BOM" đã có: công thức Approved + có sản phẩm → BOM (qty = tỷ lệ% × khối lượng mẻ)
 - Mẫu in tiếng Việt đã có: Báo giá, Hóa đơn bán hàng, Phiếu sản xuất, Công thức mỹ phẩm, Phiếu nhập kho (Purchase Receipt), Phiếu xuất kho (Delivery Note), Phiếu kho (Stock Entry), Phiếu thu/chi (Payment Entry), Đơn đặt hàng bán (Sales Order), Đơn mua hàng (Purchase Order) — chọn trong Print, tên "... VN"
 - Hóa đơn điện tử theo chuẩn VN (kết nối nhà cung cấp HĐĐT)
+
+## Kiểm thử
+```bash
+bench --site omigos.localhost set-config allow_tests true
+bench --site omigos.localhost run-tests --app omigos_erp
+```
+9 test: đọc số tiền bằng chữ, tính giá thành theo công thức, kiểm tra công thức (tổng 100%, hao hụt, tạo BOM).
