@@ -1,0 +1,23 @@
+# Omigos ERP (ERPNext/Frappe)
+
+ERP dạng Odoo xây trên **ERPNext** (mã nguồn mở, Frappe Framework).
+
+## Phân chia module
+| Nghiệp vụ | Nguồn |
+|---|---|
+| Bán hàng + Khách hàng | ERPNext: Selling, CRM |
+| Kho | ERPNext: Stock (lô, hạn dùng) |
+| Sản xuất mỹ phẩm | ERPNext: Manufacturing (BOM, Work Order) + app `omigos_erp` (Cosmetic Formula) |
+| Hóa đơn / Kế toán | ERPNext: Accounts |
+
+App `omigos_erp` thêm DocType **Cosmetic Formula** (công thức theo % + pha A/B/C/D, kiểm tra tổng = 100% trước khi duyệt).
+
+## Cài đặt
+```bash
+./scripts/install.sh   # cần bench, Python 3.10+, Node 18, MariaDB, Redis
+```
+Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Setup Wizard, bật các module trên.
+
+## Bước tiếp theo
+- Nút "Tạo BOM" từ Cosmetic Formula
+- Print format báo giá/phiếu sản xuất tiếng Việt, hóa đơn theo chuẩn VN

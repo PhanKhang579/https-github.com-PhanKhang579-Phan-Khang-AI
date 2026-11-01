@@ -1,0 +1,17 @@
+{
+ "doctype": "DocType",
+ "name": "Cosmetic Formula Item",
+ "module": "Omigos ERP",
+ "istable": 1,
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["item_code", "item_name", "percentage", "phase", "note"],
+ "fields": [
+  {"fieldname": "item_code", "fieldtype": "Link", "options": "Item", "label": "Nguyen lieu", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "item_name", "fieldtype": "Data", "label": "Ten nguyen lieu", "fetch_from": "item_code.item_name", "read_only": 1},
+  {"fieldname": "percentage", "fieldtype": "Percent", "label": "Ty le (%)", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "phase", "fieldtype": "Select", "label": "Pha", "options": "\nA\nB\nC\nD", "in_list_view": 1},
+  {"fieldname": "note", "fieldtype": "Small Text", "label": "Ghi chu"}
+ ],
+ "permissions": []
+}
