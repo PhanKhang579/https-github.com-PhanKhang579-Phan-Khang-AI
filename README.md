@@ -33,6 +33,8 @@ Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Set
 
 - **Gia thanh san xuat** (Manufacturing → Report): giá thành thực tế theo thành phẩm (hoặc từng lệnh sản xuất) từ các Stock Entry loại Manufacture: chi phí NVL + chi phí khác, giá thành đơn vị, so với giá thành theo BOM (chênh lệch %). Lọc kỳ, thành phẩm.
 
+- **Gia thanh theo cong thuc** (Manufacturing → Report): giá thành nguyên liệu mỗi mẻ và mỗi đơn vị của từng Cosmetic Formula, tính từ tỷ lệ % × khối lượng mẻ × đơn giá (giá vốn kho bình quân, hoặc giá mua gần nhất); xem chi tiết từng nguyên liệu và tỷ trọng chi phí; cảnh báo nguyên liệu thiếu giá. Chỉ tính nguyên liệu, chưa gồm nhân công/bao bì.
+
 ## Bước tiếp theo
 - Nút "Tạo BOM" đã có: công thức Approved + có sản phẩm → BOM (qty = tỷ lệ% × khối lượng mẻ)
 - Mẫu in tiếng Việt đã có: Báo giá, Hóa đơn bán hàng, Phiếu sản xuất, Công thức mỹ phẩm, Phiếu nhập kho (Purchase Receipt), Phiếu xuất kho (Delivery Note), Phiếu kho (Stock Entry), Phiếu thu/chi (Payment Entry), Đơn đặt hàng bán (Sales Order), Đơn mua hàng (Purchase Order) — chọn trong Print, tên "... VN"

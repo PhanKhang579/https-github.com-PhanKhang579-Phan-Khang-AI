@@ -1,0 +1,15 @@
+{
+ "doctype": "Report",
+ "name": "Gia thanh theo cong thuc",
+ "report_name": "Gia thanh theo cong thuc",
+ "ref_doctype": "Cosmetic Formula",
+ "report_type": "Script Report",
+ "is_standard": "Yes",
+ "module": "Omigos ERP",
+ "disabled": 0,
+ "roles": [
+  {"role": "Manufacturing Manager"},
+  {"role": "Manufacturing User"},
+  {"role": "System Manager"}
+ ]
+}
