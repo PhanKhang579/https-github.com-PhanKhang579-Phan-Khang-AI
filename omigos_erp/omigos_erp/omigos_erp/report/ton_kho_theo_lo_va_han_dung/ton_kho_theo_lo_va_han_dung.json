@@ -1,0 +1,16 @@
+{
+ "doctype": "Report",
+ "name": "Ton kho theo lo va han dung",
+ "report_name": "Ton kho theo lo va han dung",
+ "ref_doctype": "Batch",
+ "report_type": "Script Report",
+ "is_standard": "Yes",
+ "module": "Omigos ERP",
+ "disabled": 0,
+ "roles": [
+  {"role": "Stock Manager"},
+  {"role": "Stock User"},
+  {"role": "Manufacturing Manager"},
+  {"role": "System Manager"}
+ ]
+}

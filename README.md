@@ -18,6 +18,9 @@ App `omigos_erp` thêm DocType **Cosmetic Formula** (công thức theo % + pha A
 ```
 Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Setup Wizard, bật các module trên.
 
+## Báo cáo
+- **Ton kho theo lo va han dung** (Stock → Report): tồn theo lô/kho, hạn dùng, số ngày còn lại, tình trạng (Đã hết hạn / Sắp hết hạn ≤90 ngày / Còn hạn); lọc công ty, mặt hàng, kho, hết hạn trong N ngày.
+
 ## Bước tiếp theo
 - Nút "Tạo BOM" đã có: công thức Approved + có sản phẩm → BOM (qty = tỷ lệ% × khối lượng mẻ)
 - Mẫu in tiếng Việt đã có: Báo giá, Hóa đơn bán hàng, Phiếu sản xuất, Công thức mỹ phẩm, Phiếu nhập kho (Purchase Receipt), Phiếu xuất kho (Delivery Note), Phiếu kho (Stock Entry), Phiếu thu/chi (Payment Entry), Đơn đặt hàng bán (Sales Order), Đơn mua hàng (Purchase Order) — chọn trong Print, tên "... VN"
