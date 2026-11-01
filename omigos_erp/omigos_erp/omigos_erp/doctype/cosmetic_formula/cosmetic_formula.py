@@ -7,6 +7,8 @@ from frappe.utils import flt
 class CosmeticFormula(Document):
 	def validate(self):
 		self.total_percentage = sum(flt(row.percentage) for row in self.items)
+		if not 0 <= flt(self.loss_percent) < 100:
+			frappe.throw(_("Hao hụt phải từ 0 đến dưới 100%"))
 		if self.status == "Approved" and abs(self.total_percentage - 100) > 0.001:
 			frappe.throw(_("Cong thuc phai co tong ty le bang 100% truoc khi duyet (hien tai: {0}%)").format(self.total_percentage))
 
@@ -29,6 +31,8 @@ class CosmeticFormula(Document):
 		bom.company = frappe.defaults.get_user_default("Company") or frappe.db.get_single_value("Global Defaults", "default_company")
 		for row in self.items:
 			bom.append("items", {"item_code": row.item_code, "qty": flt(row.percentage) * batch / 100})
+		for pack in self.packaging:
+			bom.append("items", {"item_code": pack.item_code, "qty": flt(pack.qty_per_unit) * batch})
 		bom.insert()
 		self.db_set("bom", bom.name)
 		return bom.name

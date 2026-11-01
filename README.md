@@ -33,7 +33,7 @@ Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Set
 
 - **Gia thanh san xuat** (Manufacturing → Report): giá thành thực tế theo thành phẩm (hoặc từng lệnh sản xuất) từ các Stock Entry loại Manufacture: chi phí NVL + chi phí khác, giá thành đơn vị, so với giá thành theo BOM (chênh lệch %). Lọc kỳ, thành phẩm.
 
-- **Gia thanh theo cong thuc** (Manufacturing → Report): giá thành nguyên liệu mỗi mẻ và mỗi đơn vị của từng Cosmetic Formula, tính từ tỷ lệ % × khối lượng mẻ × đơn giá (giá vốn kho bình quân, hoặc giá mua gần nhất); xem chi tiết từng nguyên liệu và tỷ trọng chi phí; cảnh báo nguyên liệu thiếu giá. Chỉ tính nguyên liệu, chưa gồm nhân công/bao bì.
+- **Gia thanh theo cong thuc** (Manufacturing → Report): giá thành mỗi mẻ và mỗi đơn vị của từng Cosmetic Formula = nguyên liệu (tỷ lệ % × khối lượng mẻ × đơn giá) + hao hụt + bao bì + nhân công + chi phí chung. Đơn giá lấy từ giá vốn kho bình quân hoặc giá mua gần nhất; có chi tiết từng khoản và cảnh báo mặt hàng thiếu giá. Nhập bao bì (số lượng trên 1 đơn vị thành phẩm), nhân công/chi phí chung (mỗi mẻ) và hao hụt % ngay trên form Cosmetic Formula; nút "Tạo BOM" cũng đưa bao bì vào BOM.
 
 ## Bước tiếp theo
 - Nút "Tạo BOM" đã có: công thức Approved + có sản phẩm → BOM (qty = tỷ lệ% × khối lượng mẻ)

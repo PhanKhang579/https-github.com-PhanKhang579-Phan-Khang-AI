@@ -15,7 +15,14 @@
   "total_percentage",
   "bom",
   "section_items",
-  "items"
+  "items",
+  "section_packaging",
+  "packaging",
+  "section_cost",
+  "labor_cost",
+  "overhead_cost",
+  "column_break_cost",
+  "loss_percent"
  ],
  "fields": [
   {
@@ -84,6 +91,42 @@
    "options": "Cosmetic Formula Item",
    "label": "Thanh phan",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_packaging",
+   "fieldtype": "Section Break",
+   "label": "Bao bi"
+  },
+  {
+   "fieldname": "packaging",
+   "fieldtype": "Table",
+   "options": "Cosmetic Formula Packaging",
+   "label": "Bao bi / phu kien (tren 1 don vi thanh pham)"
+  },
+  {
+   "fieldname": "section_cost",
+   "fieldtype": "Section Break",
+   "label": "Chi phi khac (cho moi me)"
+  },
+  {
+   "fieldname": "labor_cost",
+   "fieldtype": "Currency",
+   "label": "Chi phi nhan cong / me"
+  },
+  {
+   "fieldname": "overhead_cost",
+   "fieldtype": "Currency",
+   "label": "Chi phi chung (may, dien, khau hao...) / me"
+  },
+  {
+   "fieldname": "column_break_cost",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loss_percent",
+   "fieldtype": "Percent",
+   "label": "Hao hut nguyen lieu (%)",
+   "description": "Tinh vao gia thanh: chi phi nguyen lieu / (1 - hao hut)"
   }
  ],
  "permissions": [
