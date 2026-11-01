@@ -18,6 +18,10 @@ App `omigos_erp` thêm DocType **Cosmetic Formula** (công thức theo % + pha A
 ```
 Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Setup Wizard, bật các module trên.
 
+## Ngôn ngữ và định dạng
+- Chọn **Vietnamese** ở Setup Wizard (hoặc System Settings → Language, và ngôn ngữ của từng người dùng) để dòng "Bằng chữ" trên các mẫu in đọc bằng tiếng Việt (ví dụ "Một Nghìn Một Trăm"); nếu để English sẽ ra tiếng Anh. Phần đuôi do ERPNext tự thêm (tiền tệ và chữ "chỉ" cho "only").
+- Muốn số tiền hiển thị kiểu `1.100,00`: System Settings → Number Format.
+
 ## Báo cáo
 - **Ton kho theo lo va han dung** (Stock → Report): tồn theo lô/kho, hạn dùng, số ngày còn lại, tình trạng (Đã hết hạn / Sắp hết hạn ≤90 ngày / Còn hạn); lọc công ty, mặt hàng, kho, hết hạn trong N ngày.
 
