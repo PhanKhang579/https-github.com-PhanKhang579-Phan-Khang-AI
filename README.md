@@ -18,6 +18,8 @@ DB_ROOT_PASSWORD=<mật khẩu root MariaDB> ./scripts/install.sh   # cần benc
 ```
 Truy cập http://omigos.localhost:8000 (Administrator / admin) rồi chạy Setup Wizard, bật các module trên.
 
+Hướng dẫn thiết lập và quy trình dùng thật: [docs/HUONG_DAN_SU_DUNG.md](docs/HUONG_DAN_SU_DUNG.md).
+
 ## Chạy bằng Docker (khuyên dùng để dùng thật)
 ```bash
 cd docker
